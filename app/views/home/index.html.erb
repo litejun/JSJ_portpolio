@@ -1,42 +1,31 @@
+<div id="main"> JSJ 포트폴리오 </div>
 
-<% unless user_signed_in? %>
-<a href="/users/sign_in">로그인</a>
-<a href="/users/sign_up">회원가입</a>
+<%unless user_signed_in?%>
+<a href="/users/sign_in">회원가입</a>
+<a href="/users/sign_up">로그인</a>
+
 <% else %>
 <a href="/users/sign_out">로그아웃</a>
 <% end %>
 
 
+<div style="text-align:center;">
+<canvas height="600" id="myChart" width="500">.</canvas>
+</div>
 
 
-
-
-
-
-
-
-
-
-
-<br /><br />
-<div id="pentagon"> </div>
-<style>
-#pentagon {
-    position: relative;
-    width: 54px;
-    border-width: 50px 18px 0;
-    border-style: solid;
-    border-color: red transparent;
-}
-#pentagon:before {
-    content: "";
-    position: absolute;
-    height: 0;
-    width: 0;
-    top: -85px;
-    left: -18px;
-    border-width: 0 45px 35px;
-    border-style: solid;
-    border-color: transparent transparent red;
-}
-</style>
+<script type="text/javascript">
+ var data = {
+  labels : ["전문능력", "정보수집능력", "통찰력", "추진력", "리더십", "협업능력", "물류능력"],
+  datasets : [{
+   fillColor : "rgba(151,187,205,0.5)",
+   strokeColor : "rgba(151,187,205,1)",
+   pointColor : "rgba(151,187,205,1)",
+   pointStrokeColor : "#fff",
+   data : [28, 48, 40, 19, 40, 27, 50]
+  }]
+ };
+ var ctx = $("#myChart").get(0).getContext("2d");
+ new Chart(ctx).Radar(data);
+  
+</script>
