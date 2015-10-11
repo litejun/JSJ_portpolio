@@ -1,11 +1,19 @@
-<div id="main"> JSJ 포트폴리오 </div>
+<div id="main"> <h1>JSJ 포트폴리오</h1> ver1.0 (created by 2015/10/7) 
+
+</div>
 
 <%unless user_signed_in?%>
+<div class="header">
 <a href="/users/sign_in">회원가입</a>
 <a href="/users/sign_up">로그인</a>
-
+</div>
 <% else %>
-<a href="/users/sign_out">로그아웃</a>
+<div class="header">
+<a href="/users/sign_out">로그아웃</a> <p>
+<%= current_user.email %>님 반갑습니다.<p>
+당신의 가입날짜는 <%=@day%> 입니다.<p>
+ JSJ포트폴리오에 가입하신 후로 <%=@today%>일이 지났습니다. 그동안 당신은 얼마나 성장했나요?
+</div>
 <% end %>
 
 
