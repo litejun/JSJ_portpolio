@@ -7,6 +7,11 @@ class HomeController < ApplicationController
       @today = (@n - @day).to_i
     end
   end
-  def chart
+  
+  def detail
+  end
+  
+  def test
+    
   end
 end

@@ -4,8 +4,8 @@
 
 <%unless user_signed_in?%>
 <div class="header">
-<a href="/users/sign_in">회원가입</a>
-<a href="/users/sign_up">로그인</a>
+<a href="/users/sign_in">로그인</a>
+<a href="/users/sign_up">회원가입</a>
 </div>
 <% else %>
 <div class="header">
@@ -16,6 +16,16 @@
 </div>
 <% end %>
 
+<div style="text-align:center">
+<a href="/home/detail"> 개발능력 </a>
+<a href="/home/detail"> 정보수집능력 </a>
+<a href="/home/detail"> 통찰력 </a>
+<a href="/home/detail"> 추진력 </a>
+<a href="/home/detail"> 리더십 </a>
+<a href="/home/detail"> 협업능력 </a>
+<a href="/home/detail"> 물류능력 </a>
+</div>
+
 
 <div style="text-align:center;">
 <canvas height="600" id="myChart" width="500">.</canvas>
@@ -24,7 +34,7 @@
 
 <script type="text/javascript">
  var data = {
-  labels : ["전문능력", "정보수집능력", "통찰력", "추진력", "리더십", "협업능력", "물류능력"],
+  labels : ["개발능력", "정보수집능력", "통찰력", "추진력", "리더십", "협업능력", "물류능력"],
   datasets : [{
    fillColor : "rgba(151,187,205,0.5)",
    strokeColor : "rgba(151,187,205,1)",
@@ -37,3 +47,4 @@
  new Chart(ctx).Radar(data);
   
 </script>
+
