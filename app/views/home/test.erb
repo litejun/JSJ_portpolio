@@ -40,49 +40,51 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-info-sign"></span> 한일을 통해 능력치를 높여보아요</h4>
                     </div>
-                    <form action="#" method="post" accept-charset="utf-8">
+                    <form action="/home/save" method="post" accept-charset="utf-8">
                     <div class="modal-body" style="padding: 5px;">
                           <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-3" style="padding-bottom: 10px;">
-                               <select class="form-control">
+                               <select name="skill">
                                   <option>능력치 선택</option>
-                                  <option value="volvo">개발능력</option>
-                                  <option value="saab">정보수집능력</option>
-                                  <option value="mercedes">통찰력</option>
-                                  <option value="audi">추진력</option>
-                                  <option value="audi">리더십</option>
-                                  <option value="audi">협업능력</option>
-                                  <option value="audi">물류능력</option>
+                                  <option value="1">개발능력</option>
+                                  <option value="2">정보수집능력</option>
+                                  <option value="3">통찰력</option>
+                                  <option value="4">추진력</option>
+                                  <option value="5">리더십</option>
+                                  <option value="6">협업능력</option>
+                                  <option value="7">물류능력</option>
                                 </select>
+                                
+                                
                                 </div>
                                 <div class="col-lg-5 col-md-5 col-sm-5" style="padding-bottom: 10px;">
-                                    <input class="form-control" name="firstname" placeholder="한 일" type="text" required autofocus />
+                                    <input class="form-control" name="title" placeholder="한 일" type="text" required autofocus />
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom: 10px;">
-                                    <input class="form-control" name="firstname" placeholder="날짜" type="date" required autofocus />
+                                    <input class="form-control" name="date" placeholder="날짜" type="date" required autofocus />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom: 10px;">
                                     
                                     <span class="star-input">
-                                      <span class="input">
-                                        <input type="radio" name="star-input" id="p1" value="1"><label for="p1">1</label>
-                                        <input type="radio" name="star-input" id="p2" value="2"><label for="p2">2</label>
-                                        <input type="radio" name="star-input" id="p3" value="3"><label for="p3">3</label>
-                                        <input type="radio" name="star-input" id="p4" value="4"><label for="p4">4</label>
-                                        <input type="radio" name="star-input" id="p5" value="5"><label for="p5">5</label>
-                                        <input type="radio" name="star-input" id="p6" value="6"><label for="p6">6</label>
-                                        <input type="radio" name="star-input" id="p7" value="7"><label for="p7">7</label>
-                                        <input type="radio" name="star-input" id="p8" value="8"><label for="p8">8</label>
-                                        <input type="radio" name="star-input" id="p9" value="9"><label for="p9">9</label>
-                                        <input type="radio" name="star-input" id="p10" value="10"><label for="p10">10</label>
+                                      <span class="input" name="score">
+                                        <input type="radio" name="score" id="p1" value="1"><label for="p1">1</label>
+                                        <input type="radio" name="score" id="p2" value="2"><label for="p2">2</label>
+                                        <input type="radio" name="score" id="p3" value="3"><label for="p3">3</label>
+                                        <input type="radio" name="score" id="p4" value="4"><label for="p4">4</label>
+                                        <input type="radio" name="score" id="p5" value="5"><label for="p5">5</label>
+                                        <input type="radio" name="score" id="p6" value="6"><label for="p6">6</label>
+                                        <input type="radio" name="score" id="p7" value="7"><label for="p7">7</label>
+                                        <input type="radio" name="score" id="p8" value="8"><label for="p8">8</label>
+                                        <input type="radio" name="score" id="p9" value="9"><label for="p9">9</label>
+                                        <input type="radio" name="score" id="p10" value="10"><label for="p10">10</label>
                                       </span>
                                       <output for="star-input"><b>0</b>점</output>
                                     </span>
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-8" style="padding-bottom: 10px;">
-                                    <input class="form-control" name="email" placeholder="한줄평" type="text" required />
+                                    <input class="form-control" name="review" placeholder="한줄평" type="text" required />
                                 </div>
                             </div>
                             
@@ -92,6 +94,7 @@
                             <input type="submit" class="btn btn-success" value="작성하기"/>
                                 <!--<span class="glyphicon glyphicon-ok"></span>-->
                         </div>
+                        </from>
                     </div>
                 </div>
             </div>
