@@ -7,14 +7,13 @@
             <li role="presentation"><a href="#">Sign in</a></li>
             <li role="presentation"><a href="#">Sign up</a></li>
           </ul>
-                  <h3 class="text-muted">JSJ 포트폴리오</h3>
+                  <img src="/assets/name.PNG">
         </nav>
 
       </div>
 
       <div class="jumbotron">
-        <h2>주체적인 삶을 원하는 당신께 드리는 선물</h2>
-        <p class="lead">지금 바로 자신에게 필요하다고 생각되는 7가지 능력을 키워보세요!</p>
+        <img src="/assets/theme.PNG">
         <p><a class="btn btn-lg btn-success" href="#" role="button">등록하러 가기</a></p>
         <div style="text-align:center;">
         <canvas height="600" id="myChart" width="500">.</canvas>
@@ -25,10 +24,12 @@
          var data = {
           labels : ["개발능력", "정보수집능력", "통찰력", "추진력", "리더십", "협업능력", "물류능력"],
           datasets : [{
-           fillColor : "rgba(151,187,205,0.5)",
-           strokeColor : "rgba(151,187,205,1)",
-           pointColor : "rgba(151,187,205,1)",
+           fillColor : "rgba(220,220,220,0.2)",
+           strokeColor : "rgba(220,220,220,1)",
+           pointColor : "rgba(220,220,220,1)",
            pointStrokeColor : "#fff",
+            angleLineColor : "#fff",
+                pointLabelFontColor : "#fff",
            data : [28, 48, 40, 19, 40, 27, 50]
           }]
          };
@@ -40,24 +41,27 @@
 
       <div class="row marketing">
         <div class="col-lg-6">
-          <h4>Subheading</h4>
+          <h4>개발능력</h4>
           <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
 
-          <h4>Subheading</h4>
+          <h4>정보수집능력</h4>
           <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
 
-          <h4>Subheading</h4>
+          <h4>통찰력</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          
+          <h4>물류능력</h4>
           <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
 
         <div class="col-lg-6">
-          <h4>Subheading</h4>
+          <h4>추진력</h4>
           <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
 
-          <h4>Subheading</h4>
+          <h4>리더십</h4>
           <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
 
-          <h4>Subheading</h4>
+          <h4>협업능력</h4>
           <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
       </div>
@@ -71,3 +75,62 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+    
+    
+    
+  <script>  
+    Chart.defaults.global = {
+    //Boolean - Whether to show lines for each scale point
+    scaleShowLine : true,
+
+    //Boolean - Whether we show the angle lines out of the radar
+    angleShowLineOut : true,
+
+    //Boolean - Whether to show labels on the scale
+    scaleShowLabels : false,
+
+    // Boolean - Whether the scale should begin at zero
+    scaleBeginAtZero : true,
+
+    //String - Colour of the angle line
+    angleLineColor : "#fff",
+
+    //Number - Pixel width of the angle line
+    angleLineWidth : 1,
+
+    //String - Point label font declaration
+    pointLabelFontFamily : "'Arial'",
+
+    //String - Point label font weight
+    pointLabelFontStyle : "normal",
+
+    //Number - Point label font size in pixels
+    pointLabelFontSize : 10,
+
+    //String - Point label font colour
+    pointLabelFontColor : "#fff",
+
+    //Boolean - Whether to show a dot for each point
+    pointDot : true,
+
+    //Number - Radius of each point dot in pixels
+    pointDotRadius : 3,
+
+    //Number - Pixel width of point dot stroke
+    pointDotStrokeWidth : 1,
+
+    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+    pointHitDetectionRadius : 20,
+
+    //Boolean - Whether to show a stroke for datasets
+    datasetStroke : true,
+
+    //Number - Pixel width of dataset stroke
+    datasetStrokeWidth : 2,
+
+    //Boolean - Whether to fill the dataset with a colour
+    datasetFill : true,
+
+   }
+</script>
