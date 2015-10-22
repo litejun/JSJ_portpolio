@@ -8,6 +8,37 @@ class HomeController < ApplicationController
     end
   end
   
+  def index2
+  
+    click = params[:click]
+    case click
+    
+    when "1"
+      data = Development.all
+      @data2 = "developments"
+    when "2"
+      data = Information.all
+      @data2 = informations
+    when "통찰력"
+      data = Insight.all
+      @data2 = insights
+    when "물류능력"
+      data = Momentum.all
+      @data2 = momenta
+    when "체력"
+      data = Leadership.all
+      @data2 = leaderships
+    when "창의력"
+      data = Collaboration.all
+      @data2 = collaborations
+    when "협업능력"
+      data = Logistics.all
+      @data2 = logistics
+    end
+    
+  
+  end
+  
   def detail
   end
   
@@ -37,7 +68,7 @@ class HomeController < ApplicationController
       data = Logistics.new
     end
     
-    
+    data.user_id = params[:user_id]
     data.title = params[:title]
     data.date = params[:date]
     data.score = params[:score]

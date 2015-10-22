@@ -2,11 +2,17 @@
     <div class="container">
       <div class="header clearfix">
         <nav>
+            <% if current_user.nil? %>
           <ul class="nav nav-pills pull-right">
             <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">Sign in</a></li>
-            <li role="presentation"><a href="#">Sign up</a></li>
+            <li role="presentation"><a href="/users/sign_in">Sign in</a></li>
+            <li role="presentation"><a href="/users/sign_up">Sign up</a></li>
           </ul>
+              <% else %>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="/users/sign_out">Sign out</a></li>
+          </ul>
+              <% end %>
                   <img src="/assets/name.PNG">
         </nav>
 
@@ -14,15 +20,45 @@
 
       <div class="jumbotron">
         <img src="/assets/theme.PNG">
-        <p><a class="btn btn-lg btn-success" href="#" role="button">등록하러 가기</a></p>
+            <div style="text-align:center;">
+            <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#contact" data-original-title>
+                      성장 기록하기
+            </a>
+            </div>
         <div style="text-align:center;">
         <canvas height="600" id="myChart" width="500">.</canvas>
         </div>
         
         
+        <% a=0 %> <% b=0 %> <% c=0 %> <% d=0 %> <% e=0 %> <% f=0 %> <% g=0 %>
+    
+    <% unless current_user.nil? %>    
+        <% current_user.developments.each do |x| %>
+            <% a = a + x.score.to_i %>
+            <% end %>
+        <% current_user.informations.each do |x| %>
+            <% b = b + x.score.to_i %>
+            <% end %>
+        <% current_user.insights.each do |x| %>
+            <% c = c + x.score.to_i %>
+            <% end %>
+        <% current_user.momenta.each do |x| %>
+            <% d = d + x.score.to_i %>
+            <% end %>
+        <% current_user.leaderships.each do |x| %>
+            <% e = e + x.score.to_i %>
+            <% end %>
+        <% current_user.collaborations.each do |x| %>
+            <% f = f + x.score.to_i %>
+            <% end %>
+        <% current_user.logistics.each do |x| %>    
+            <% g = g + x.score.to_i %>
+            <% end %>
+            
+            
         <script type="text/javascript">
          var data = {
-          labels : ["개발능력", "정보수집능력", "통찰력", "추진력", "리더십", "협업능력", "물류능력"],
+          labels : ["개발능력", "정보수집능력", "통찰력", "물류능력", "체력", "창의력", "협업능력"],
           datasets : [{
            fillColor : "rgba(220,220,220,0.2)",
            strokeColor : "rgba(220,220,220,1)",
@@ -30,39 +66,48 @@
            pointStrokeColor : "#fff",
             angleLineColor : "#fff",
                 pointLabelFontColor : "#fff",
-           data : [28, 48, 40, 19, 40, 27, 50]
+           data : [<%= a %>, <%= b %>, <%= c %>, <%= d %>, <%= e %>, <%= f %>, <%= g %>]
           }]
          };
          var ctx = $("#myChart").get(0).getContext("2d");
          new Chart(ctx).Radar(data);
           
         </script>
+        <% end %>
+        
       </div>
 
       <div class="row marketing">
         <div class="col-lg-6">
-          <h4>개발능력</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+              <form action="/home/index2" method="post">
+                 <input type="submit" name="click" value="1"> 
+                 개발능력 : <%=a%>점
+              </form>
+          <p> IT전성기 사회에서 소프트웨어는 반드시 필요하다! </p>
 
-          <h4>정보수집능력</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>통찰력</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
           
-          <h4>물류능력</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                <form action="/home/index2" method="post">
+                 <input type="submit" name="click" value="2">               
+              정보수집능력 : <%=b%>점
+              </form>
+          <p> 아는것이 힘이다! </p>
+
+          <h3><a href="/home/index2" name="click">통찰력</a> : <%=c%>점 </h3>
+          <p>한 걸음 내딛기 전에 10걸음 앞을 보아야한다!</p>
+          
+          <h3><a href="/home/index2" name="click">물류능력</a> : <%=d%>점 </h3>
+          <p> 모든 것을 연결한다! </p>
         </div>
 
         <div class="col-lg-6">
-          <h4>추진력</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+          <h3><a href="/home/index2" name="click">체력</a> : <%=e%>점 </h3>
+          <p> 오래가는 것이 중요하다! </p>
 
-          <h4>리더십</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+          <h3><a href="/home/index2" name="click">창의력</a> : <%=f%>점 </h3>
+          <p>가능성의 천천히 타는 도화선은 상상력에 의해 불붙는다!</p>
 
-          <h4>협업능력</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          <h3><a href="/home/index2" name="click">협업능력</a> : <%=g%>점 </h3>
+          <p>우리는 나보다 강하다!</p>
         </div>
       </div>
 
@@ -76,11 +121,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     
-    <div style="text-align:center;">
-<a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#contact" data-original-title>
-          성장 기록하기
-</a>
-</div>
+
         <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="panel panel-primary">
@@ -89,6 +130,9 @@
                         <h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-info-sign"></span> 한일을 통해 능력치를 높여보아요</h4>
                     </div>
                     <form action="/home/save" method="post" accept-charset="utf-8">
+                        <% unless current_user.nil? %>
+                        <input type="hidden" name="user_id" value=<%=current_user.id%>>
+                        <% end %>
                     <div class="modal-body" style="padding: 5px;">
                           <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-3" style="padding-bottom: 10px;">
@@ -97,10 +141,10 @@
                                   <option value="1">개발능력</option>
                                   <option value="2">정보수집능력</option>
                                   <option value="3">통찰력</option>
-                                  <option value="4">추진력</option>
-                                  <option value="5">리더십</option>
-                                  <option value="6">협업능력</option>
-                                  <option value="7">물류능력</option>
+                                  <option value="4">물류능력</option>
+                                  <option value="5">체력</option>
+                                  <option value="6">창의력</option>
+                                  <option value="7">협업능력</option>
                                 </select>
                                 
                                 
@@ -383,3 +427,4 @@ starRating();
 
    }
 </script>
+

@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20151014125006) do
 
   create_table "collaborations", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.string   "date"
     t.string   "score"
@@ -23,6 +24,7 @@ ActiveRecord::Schema.define(version: 20151014125006) do
   end
 
   create_table "developments", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.string   "date"
     t.string   "score"
@@ -32,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151014125006) do
   end
 
   create_table "information", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.string   "date"
     t.string   "score"
@@ -41,6 +44,7 @@ ActiveRecord::Schema.define(version: 20151014125006) do
   end
 
   create_table "insights", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.string   "date"
     t.string   "score"
@@ -50,6 +54,7 @@ ActiveRecord::Schema.define(version: 20151014125006) do
   end
 
   create_table "leaderships", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.string   "date"
     t.string   "score"
@@ -59,6 +64,7 @@ ActiveRecord::Schema.define(version: 20151014125006) do
   end
 
   create_table "logistics", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.string   "date"
     t.string   "score"
@@ -86,6 +92,7 @@ ActiveRecord::Schema.define(version: 20151014125006) do
   add_index "models", ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
 
   create_table "momenta", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.string   "date"
     t.string   "score"
