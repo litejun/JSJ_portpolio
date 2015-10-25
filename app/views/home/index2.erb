@@ -1,8 +1,15 @@
-<%=@data2%>
-<% current_user.developments.each do |x| %>
-    <%= x.title %>
-    <%= x.date %>
-    <%= x.score %>
-    <%= x.review %>
+
+<div style="text-align:center; background-color:orange; color:black">
+
+<% @data2.each do |x| %>
+    한 일 : <strong><%= x.title %></strong>
+    날짜 : <strong><%= x.date %></strong>
+    점수 : <strong><%= x.score %></strong>
+    한줄평 : <strong><%= x.review %></strong>
     </br>
 <% end %>
+</div>
+
+<div style="text-align:center">
+<a href="/home/index">돌아가기</a>
+</div>

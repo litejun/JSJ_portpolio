@@ -15,25 +15,26 @@ class HomeController < ApplicationController
     
     when "1"
       data = Development.all
-      @data2 = "developments"
+     @data2 = current_user.developments 
+
     when "2"
       data = Information.all
-      @data2 = informations
-    when "통찰력"
+      @data2 = current_user.informations
+    when "3"
       data = Insight.all
-      @data2 = insights
-    when "물류능력"
+      @data2 = current_user.insights
+    when "4"
       data = Momentum.all
-      @data2 = momenta
-    when "체력"
+      @data2 = current_user.momenta
+    when "5"
       data = Leadership.all
-      @data2 = leaderships
-    when "창의력"
+      @data2 = current_user.leaderships
+    when "6"
       data = Collaboration.all
-      @data2 = collaborations
-    when "협업능력"
-      data = Logistics.all
-      @data2 = logistics
+      @data2 = current_user.collaborations
+    when "7"
+      data = Logistic.all
+      @data2 = current_user.logistics
     end
     
   
@@ -65,7 +66,7 @@ class HomeController < ApplicationController
     when "6"
       data = Collaboration.new
     when "7"
-      data = Logistics.new
+      data = Logistic.new
     end
     
     data.user_id = params[:user_id]
