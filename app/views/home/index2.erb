@@ -1,6 +1,10 @@
 
 <div style="text-align:center; background-color:orange; color:black">
 
+<p>
+   <%=current_user.email%>님의 <%= @dataname %> 업적은 다음과 같습니다 
+</p>
+
 <% @data2.each do |x| %>
     한 일 : <strong><%= x.title %></strong>
     날짜 : <strong><%= x.date %></strong>

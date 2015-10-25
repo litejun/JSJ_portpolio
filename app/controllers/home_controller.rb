@@ -16,35 +16,35 @@ class HomeController < ApplicationController
     when "1"
       data = Development.all
      @data2 = current_user.developments 
+     @dataname = "개발능력"
 
     when "2"
       data = Information.all
       @data2 = current_user.informations
+      @dataname = "정보수집능력"
     when "3"
       data = Insight.all
       @data2 = current_user.insights
+      @dataname = "통찰력"
     when "4"
       data = Momentum.all
       @data2 = current_user.momenta
+      @dataname = "물류능력"
     when "5"
       data = Leadership.all
       @data2 = current_user.leaderships
+      @dataname = "체력"
     when "6"
       data = Collaboration.all
       @data2 = current_user.collaborations
+      @dataname = "창의력"
     when "7"
       data = Logistic.all
       @data2 = current_user.logistics
+      @dataname = "협업능력"
     end
     
   
-  end
-  
-  def detail
-  end
-  
-  def test
-    
   end
   
   def save
